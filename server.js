@@ -33,13 +33,7 @@ app.use(session({
      secret: "itsasecretkey",
     resave:false,
     saveInitialized:true,
-    store:new MongoStore({mongooseConnection:mongoose.connection}),
-    cookie: {
-        maxAge: Date.now() + (1 * 60 * 1000)
-    },
-    httpOnly: true,
-    ephemeral: true
-
+    store:new MongoStore({mongooseConnection:mongoose.connection})
     }));
 
 app.use(passport.initialize());

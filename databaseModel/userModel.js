@@ -21,18 +21,31 @@ const userSchema = mongoose.Schema({
     },
     userImage: {
         type: String,
-        default: 'default.png'
+        default:"/images/defaultImage.jpg"
     },
-    facebook: {
+    birthdate: {
+        type: String,
+        trim: true
+    },
+    facebook: { 
         type: String,
         default: ""
+    },
+    ageRange:Object,
+    gender: {
+        type: String,
+        trim: true,
+        default:""
     },
     fbTokens: Array,
     googel: {
         type: String,
         default: ""
     },
-    googleTokens: Array
+    location:{
+        type:String,
+        default:"Delhi"
+    }
 });
 
 userSchema.methods.encryptPassword =(password)=>{

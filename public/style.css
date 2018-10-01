@@ -23,3 +23,42 @@ body {
 .fade {
     opacity: 0.36 !important;
 }
+
+.btn-facebook{
+    background: #46629D;
+    color: #fff;
+    border-radius: 0px;
+    width:100px;
+}
+.btn-facebook:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.margin{
+    margin-right: 10px !important;
+}
+
+.btn-google{
+    background: red;
+    color: #fff;
+    border-radius: 0px;
+    width:100px;
+}
+.btn-google:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.custom-width{
+    width: 22%;
+}
+.gj-textbox-md{
+    border: 1px solid #ced4da !important;
+}
+.gj-icon{
+    top:20% !important;
+    right: 3% !important;
+}
+.custom-img{
+    width: 85%;
+    margin: 12px auto;
+}

@@ -9,7 +9,13 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+   <!-- <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> -->
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <!-- <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="style.css"> 
     <title>
         <% if(typeof title !== 'undefined') {%>
         <%= title %>
@@ -34,7 +40,7 @@
                 <ul class="navbar-nav ml-auto">
                     <% if(isAuthenticated) { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                        <a class="nav-link" href="#">Welcome <%= userId.firstName %></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>

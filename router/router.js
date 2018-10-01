@@ -10,8 +10,10 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/welcome',IsLoggedIn,(req, res) => {
-    res.render('welcome');
+router.get('/welcome', IsLoggedIn, (req, res) => {
+    res.render('welcome', {
+        userId: req.user
+    });
 });
 
 router.get('/register', (req, res) => {
@@ -24,6 +26,43 @@ router.get('/register', (req, res) => {
     // res.render('register',{ message: req.flash('emailError') });
 
 });
+
+router.get("/welcome/dashboard",(req, res) => {
+    res.render("dashboard");
+})
+
+//facebook login
+router.get('/auth/facebook', passport.authenticate('facebook', {
+    scope: ['email', 'user_gender', 'user_birthday', 'user_location','user_age_range'],
+    // authType: 'reauthenticate',
+    authNonce: 'foo123'
+}));
+
+router.get('/auth/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect:'/welcome',
+        failureRedirect: '/',
+        failureFlash: true
+    }), (req, res) => {
+        res.redirect("/welcome");
+    });
+
+
+//googel login
+router.get('/auth/google',
+    passport.authenticate('google', {
+        scope: ['https://www.googleapis.com/auth/plus.login',
+            'https://www.googleapis.com/auth/plus.profile.emails.read'
+        ]
+    }));
+
+
+router.get('/auth/google/callback',
+    passport.authenticate('google', {
+        successRedirect: '/welcome',
+        failureRedirect: '/',
+        failureFlash: true
+    }));
 
 
 // login
@@ -60,19 +99,19 @@ router.post('/register', function (req, res, next) {
 
 
 //logout
-router.get("/logout",(req,res)=>{
+router.get("/logout", (req, res) => {
     req.logout();
     req.session.destroy();
     res.locals.isAuthenticated = false;
     res.redirect("/");
-    })
-    
+})
 
-function IsLoggedIn(req,res,next){
-if(req.isAuthenticated()){
-    return next();
-}
-res.redirect("/");
+//middleware
+function IsLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/");
 }
 
 module.exports = router;

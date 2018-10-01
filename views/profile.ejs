@@ -1,4 +1,3 @@
-
 <% include partials/header %>
 
 <div class="container">
@@ -12,14 +11,13 @@
                 <div class="col-md-4 col-sm-12 divider">
                     <div class="card">
 
-                        <img src="<%= userId.userImage %>" class="img-thumbnail custom-img rounded-circle" alt="">
+                        <img src="/images/defaultImage.jpg" class="img-thumbnail w-20 rounded-circle" alt="">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h5 class="card-title"><%= userId.firstName %> 
-                                        <%= userId.lastName %></h5>
+                                    <h5 class="card-title">{{userData.firstName}} {{userData.lastName}}</h5>
                                 <li class="list-group-item">
-                                    <h6 class="card-text tilt"><%= userId.email %></h6>
+                                    <h6 class="card-text tilt">{{userData.email}}</h6>
                                 </li>
                             </ul>
                         </div>
@@ -31,36 +29,42 @@
                             <div class="form-group row">
                                 <h6 class="col-md-6 col-sm-4 col-form-label">First name</h6>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <p class="form-control-plaintext"><%= userId.firstName %></p>
+                                    <p class="form-control-plaintext">{{userData.firstName}}</p>
                                 </div>
                             </div>
                             <hr class="my-2">
                             <div class="form-group row">
                                 <h6 class="col-md-6 col-sm-4 col-form-label">Last name</h6>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <p class="form-control-plaintext"><%= userId.lastName %></p>
+                                    <p class="form-control-plaintext">{{userData.lastName}}</p>
                                 </div>
                             </div>
                             <hr class="my-2">
                             <div class="form-group row">
                                 <h6 class="col-md-6 col-sm-4 col-form-label">Gender</h6>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <p class="form-control-plaintext"><%= userId.gender %></p>
+                                    <p class="form-control-plaintext">{{userData.gender}}</p>
                                 </div>
                             </div>
                             <hr class="my-2">
                             <div class="form-group row">
                                 <h6 class="col-md-6 col-sm-4 col-form-label">Birth Date</h6>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <p class="form-control-plaintext"><%= userId.birthdate %></p>
+                                    <p class="form-control-plaintext">{{userData.birthdate}}</p>
                                 </div>
                             </div>
                             <hr class="my-2">
+                            <div class="form-group row">
+                                <h6 class="col-md-6 col-sm-4 col-form-label">Hometown</h6>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="form-control-plaintext">{{userData.hometown}}</p>
+                                </div>
+                            </div>
                             <hr class="my-2">
                             <div class="form-group row mb-0">
                                 <h6 class="col-md-6 col-sm-4 col-form-label">Location</h6>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <p class="form-control-plaintext"><%= userId.location %></p>
+                                    <p class="form-control-plaintext">{{userData.location}}</p>
                                 </div>
                             </div>
                         </div>

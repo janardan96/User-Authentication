@@ -10,6 +10,8 @@ const flash=require('connect-flash');
 const validator=require('express-validator');
 const path=require('path');
 require('./passport/passport-local');
+require("./passport/passport-facebook");
+require('./passport/passport-google');
 
 
 // const publicPath = path.join(__dirname, "/validation");

@@ -30,6 +30,8 @@ passport.use('local.signup',new LocalStrategy({
         newUser.firstName=req.body.firstName;
         newUser.lastName=req.body.lastName;
         newUser.email=req.body.email;
+        newUser.birthdate=req.body.birthdate;
+        newUser.gender=req.body.gender;
         if(req.body.password===req.body.confirmPassword){
           newUser.password=newUser.encryptPassword(req.body.password);
         }  

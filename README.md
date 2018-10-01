@@ -1,6 +1,6 @@
-A basic app created using passport.js, having login and signup system with these features.
+**User Authentication
 ---
-Local-login
-Oauth with GOOGLE
-Oauth with FACEBOOK
+*Local-login
+*Oauth with GOOGLE
+*Oauth with FACEBOOK
 
